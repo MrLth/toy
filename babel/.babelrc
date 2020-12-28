@@ -1,0 +1,4 @@
+{
+    "plugins": [["./myPlugin", {"a":1}]]
+}
+// babel native.js -o dist.js
