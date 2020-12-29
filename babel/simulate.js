@@ -2,7 +2,7 @@
  * @Author: mrlthf11
  * @LastEditors: mrlthf11
  * @Date: 2020-12-28 10:33:28
- * @LastEditTime: 2020-12-28 15:45:16
+ * @LastEditTime: 2020-12-29 11:59:11
  * @Description: file content
  */
 // 用例 (add 2 (sub 40 2))
@@ -195,7 +195,7 @@ function parser(nativeCode) {
             const parent = node.parent
             if (parent.type === 'CallExpression') {
                 parent.arguments.push(node)
-
+                
                 removeBodyNode(parent, node)
             }
         }
