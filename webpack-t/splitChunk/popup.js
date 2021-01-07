@@ -2,7 +2,7 @@
  * @Author: mrlthf11
  * @LastEditors: mrlthf11
  * @Date: 2021-01-04 16:15:16
- * @LastEditTime: 2021-01-04 16:42:33
+ * @LastEditTime: 2021-01-05 08:22:08
  * @Description: file content
  */
 
@@ -14,6 +14,7 @@ import subModule from './subModule'
 // const subModule = require('./subModule')
 subModule()
 module()
-console.log('popup');
+
+console.log('popup', window?.log);
 // })
 
