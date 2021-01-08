@@ -7,6 +7,24 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "reactMyHooks",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/react/myHooks.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "vue",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/vue/defineProperty.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "启动程序",
             "skipFiles": [
                 "<node_internals>/**"
