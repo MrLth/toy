@@ -2,7 +2,7 @@
  * @Author: mrlthf11
  * @LastEditors: mrlthf11
  * @Date: 2021-02-01 11:49:59
- * @LastEditTime: 2021-02-01 15:46:17
+ * @LastEditTime: 2021-02-02 10:28:13
  ? https://github.com/yiminghe/async-validator
  */
 
