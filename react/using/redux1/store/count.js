@@ -1,27 +1,27 @@
 /*
  * @Author: mrlthf11
  * @LastEditors: mrlthf11
- * @Date: 2021-02-06 20:30:13
- * @LastEditTime: 2021-02-06 20:57:11
+ * @Date: 2021-02-07 16:44:05
+ * @LastEditTime: 2021-02-07 16:52:11
  * @Description: file content
  */
-import { createStore } from 'redux'
+import { INCREASE, DECREASE, RESET } from './actionType'
 
 const initialState = {
-  count: 0
+  count: 0,
 }
 
-export function reducer(state = initialState, action) {
+function reducer(state = initialState, action) {
   switch (action.type) {
-    case 'increase':
+    case INCREASE:
       return { ...state, count: state.count + 1 };
-    case 'decrease':
+    case DECREASE:
       return { ...state, count: state.count - 1 };
-    case 'reset':
+    case RESET:
       return { ...state, count: action.payload };
     default:
       return state
   }
 }
 
-export default createStore(reducer)
+export default reducer

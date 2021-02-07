@@ -2,13 +2,14 @@
  * @Author: mrlthf11
  * @LastEditors: mrlthf11
  * @Date: 2021-02-06 20:49:44
- * @LastEditTime: 2021-02-06 20:58:36
+ * @LastEditTime: 2021-02-07 16:53:37
  * @Description: file content
  */
 
 import store from './store'
 import React from 'react'
 
+import { INCREASE } from './store/actionType'
 
 class Count extends React.Component {
   componentDidMount() {
@@ -17,13 +18,13 @@ class Count extends React.Component {
     })
   }
   add() {
-    store.dispatch({ type: 'increment' })
+    store.dispatch({ type: INCREASE })
   }
   render() {
-    const count = store.getState()
+    const { count } = store.getState().count
     return <>
       <h1>{count}</h1>
-      <button onClick={this.add().bind(this)}>increment</button>
+      <button onClick={this.add}>increment</button>
     </>
   }
 }

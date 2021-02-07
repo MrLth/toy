@@ -2,10 +2,10 @@
  * @Author: mrlthf11
  * @LastEditors: mrlthf11
  * @Date: 2021-02-06 20:40:03
- * @LastEditTime: 2021-02-06 20:47:34
+ * @LastEditTime: 2021-02-07 16:40:58
  * @Description: file content
  */
-function createStore(reducer) {
+export function createStore(reducer) {
   let state = reducer(undefined, {})
   let subscriber = new Set()
   return {
@@ -29,3 +29,13 @@ function createStore(reducer) {
     }
   }
 }
+
+export function combineReducers(reducers) {
+  return (state={}, action) => {
+    for (const [k, reducer] of Object.entries(reducers)) {
+      state[k] = reducer(state[k], action)
+    }
+    return state
+  }
+}
+
