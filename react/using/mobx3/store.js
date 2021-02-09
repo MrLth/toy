@@ -2,7 +2,7 @@
  * @Author: mrlthf11
  * @LastEditors: mrlthf11
  * @Date: 2021-02-09 10:24:28
- * @LastEditTime: 2021-02-09 16:38:00
+ * @LastEditTime: 2021-02-09 19:14:56
  * @Description: file content
  */
 import { observable, action, makeObservable } from '@realize/mobx'
@@ -13,7 +13,6 @@ class Counter {
   }
   @observable count = 0
   @action.bound add() {
-    console.log('add')
     this.count++
   }
 

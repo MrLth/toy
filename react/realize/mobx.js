@@ -2,19 +2,20 @@
  * @Author: mrlthf11
  * @LastEditors: mrlthf11
  * @Date: 2021-02-09 10:16:51
- * @LastEditTime: 2021-02-09 16:59:01
+ * @LastEditTime: 2021-02-09 21:04:11
  * @Description: file content
  */
 
-const isFunction = source => typeof source === 'function'
+export const isFunction = source => typeof source === 'function'
 
 const map = new Map()
-const reactivates = new Set()
 let isCollect = 0
+
+window.map = map
 
 const dependsStack = []
 
-class dependsCollector {
+export class DependsCollector {
   constructor() {
     this.reactivates = new Set()
   }
@@ -87,9 +88,10 @@ export function observable(target, key, descriptor) {
 }
 
 export function autorun(handler) {
-  depsManager.collectStart()
+  const dependsCollector =  new DependsCollector()
+  dependsCollector.collectStart()
   handler()
-  depsManager.collectEnd(handler)
+  dependsCollector.collectEnd(handler)
 }
 
 

@@ -2,24 +2,39 @@
  * @Author: mrlthf11
  * @LastEditors: mrlthf11
  * @Date: 2021-02-09 15:21:20
- * @LastEditTime: 2021-02-09 16:25:08
+ * @LastEditTime: 2021-02-09 21:03:41
  * @Description: file content
  */
-import { depsManager } from './mobx'
+import { depsManager, DependsCollector, isFunction } from './mobx'
 
-export function observer(target) {
-  const nativeWill = target.prototype.componentWillMount
-  const nativeDid = target.prototype.componentDidMount
+const dependsCollector = Symbol('depend key')
+const forceUpdateCb = Symbol('Force update cb')
 
-  target.prototype.componentWillMount = function () {
-    nativeWill && nativeWill.call(this)
-    depsManager.collectStart()
+function baseObserver(isStaticComponent = true, target) {
+  const nativeRender = target.prototype.render
+
+  target.prototype.render = function () {
+    if (isStaticComponent && this[dependsCollector]) {
+      return nativeRender.call(this)
+    }
+
+    this[dependsCollector] = new DependsCollector()
+    this[dependsCollector].collectStart()
+    if (!this[forceUpdateCb]) {
+      this[forceUpdateCb] = () => {
+        this.forceUpdate()
+      }
+    }
+
+    const jsxElement = nativeRender.call(this)
+
+    this[dependsCollector].collectEnd(this[forceUpdateCb])
+    return jsxElement
   }
+}
 
-  target.prototype.componentDidMount = function () {
-    nativeDid && nativeDid.call(this)
-    depsManager.collectEnd(()=>{
-      this.forceUpdate()
-    })
-  }
+export const observer = (arg1) => {
+  return typeof arg1 === 'boolean'
+    ? baseObserver.bind(null, arg1)
+    : baseObserver(undefined, arg1)
 }

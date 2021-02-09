@@ -8,6 +8,7 @@ class Color extends Component {
     console.log('Color reRender')
 
     const { color, changeColor } = store
+
     return <>
       <h1 style={{ color }}>新年快乐</h1>
       <button onClick={changeColor}>changeColor</button>

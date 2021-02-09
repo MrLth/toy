@@ -2,7 +2,7 @@
  * @Author: mrlthf11
  * @LastEditors: mrlthf11
  * @Date: 2021-02-09 10:23:57
- * @LastEditTime: 2021-02-09 16:35:51
+ * @LastEditTime: 2021-02-09 19:56:35
  * @Description: file content
  */
 
@@ -16,7 +16,7 @@ import Color from './Color'
 ReactDom.render(
   <>
     <Count />
-    <Color />
+    <Color/>
   </>,
   document.querySelector('#root')
 )
