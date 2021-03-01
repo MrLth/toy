@@ -1,0 +1,4 @@
+{
+    "plugins": [["./plugin-log"]]
+}
+// babel native.js -o dist.js
