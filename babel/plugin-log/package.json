@@ -1,0 +1,23 @@
+{
+  "name": "babel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist.js",
+  "dependencies": {
+    "@babel/template": "^7.12.7",
+    "date-format": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.1",
+    "@babel/types": "^7.12.12",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.24.1",
+    "webpack-cli": "^4.5.0"
+  },
+  "scripts": {
+    "parse": "babel entry.js -o output.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
