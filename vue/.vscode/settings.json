@@ -1,0 +1,116 @@
+{
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "variable.other.readwrite.decorator",
+          "variable.other.property.decorator.js",
+          "punctuation.decorator.js",
+          "support.variable.dom",
+          "meta.decorator.js variable.other.readwrite.js",
+          "meta.decorator.js variable.other.object.js",
+          "meta.decorator.js variable.other.property.js"
+        ],
+        "settings": {
+          "foreground": "#56B6C2",
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          "meta.decorator entity.name.function",
+          "keyword.control.module"
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          "meta.function-call.without-arguments entity.name.type"
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      },
+      {
+        "scope": [
+          "variable.other.readwrite",
+          "variable.other.object"
+        ],
+        "settings": {
+          "foreground": "#ABB2BF"
+        }
+      },
+      {
+        "scope": [
+          "variable.other.property",
+          "constant.other.object.key string.unquoted"
+        ],
+        "settings": {
+          "foreground": "#E06C75"
+        }
+      },
+      {
+        "scope": [
+          "meta.tag meta.jsx.children",
+          "meta.tag JSXNested"
+        ],
+        "settings": {
+          "foreground": "#98C379"
+        }
+      },
+      {
+        "scope": "entity.name.class.js",
+        "settings": {
+          "foreground": "#E5C07B"
+        }
+      },
+      {
+        "scope": [
+          "support.type.primitive",
+          "support.type.object.console",
+          "support.variable.property",
+          "variable.language.prototype"
+        ],
+        "settings": {
+          "foreground": "#E5C07B",
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          "keyword.operator.in",
+          "keyword.operator.of"
+        ],
+        "settings": {
+          "foreground": "#c678dd"
+        }
+      },
+      {
+        "scope": [
+          "meta.import.tsx"
+        ],
+        "settings": {
+          "foreground": "#c678dd",
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          "keyword.operator.expression.delete",
+          "keyword.operator.delete",
+          "keyword.operator.expression.typeof",
+          "keyword.operator.typeof",
+          "keyword.operator.expression.void",
+          "keyword.operator.void",
+          "keyword.operator"
+        ],
+        "settings": {
+          "foreground": "#56B6C2"
+        }
+      }
+    ],
+    "comments": ""
+  }
+}
