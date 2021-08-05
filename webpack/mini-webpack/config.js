@@ -1,7 +1,17 @@
-/*
- * @Author: mrlthf11
- * @LastEditors: mrlthf11
- * @Date: 2021-08-04 11:42:56
- * @LastEditTime: 2021-08-04 11:42:56
- * @Description: file content
- */
+module.exports = {
+  input: 'src/pages',
+  output: 'dist',
+  port: 8000,
+  mode: 'prod',
+  external: {
+    antd: {
+      js: 'https://cdn.bootcdn.net/ajax/libs/antd/4.7.0/antd.min.js',
+      css: 'https://cdn.bootcdn.net/ajax/libs/antd/4.7.0/antd.min.css'
+    }
+  }
+}
+
+// 1. 入口 index.tsx
+
+// 2. 出口 dist
+
